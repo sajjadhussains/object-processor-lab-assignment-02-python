@@ -26,7 +26,7 @@ while True:
             print(result.stdout)
             print(result.stderr)
             os.remove(object_path)
-        else:
+        elif postfix2=='txt':
             # shutil.copy(object_path,'.')
             for item in range(len(postfix)):
                 main_item=item+1
@@ -41,7 +41,7 @@ while True:
                             if i==num_of_lines:
                                 break
                             file.write(val)
-
+            # zip file
             zip_file_name = prefix + '.zip'
             with zipfile.ZipFile(zip_file_name, 'w') as zip_file:
                 for converted_file in glob.glob(prefix + '_*.{}'.format(postfix2)):
@@ -62,5 +62,8 @@ while True:
             for file in files:
                 if 'txt' in file:
                     os.remove(file)
+        else:
+            print('please give python file or text file')
+            os.remove(object_path)
         break
 
