@@ -62,8 +62,5 @@ while True:
             for file in files:
                 if 'txt' in file:
                     os.remove(file)
-        else:
-            print('please give python file or text file')
-            os.remove(object_path)
         break
 
